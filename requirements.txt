@@ -1,0 +1,5 @@
+flask
+gunicorn
+sounddevice
+numpy
+Flask-CORS
