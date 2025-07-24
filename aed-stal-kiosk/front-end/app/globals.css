@@ -16,3 +16,31 @@ body {
     @apply text-foreground;
     @apply font-sans;
 }
+
+.screen {
+    @apply min-w-screen;
+    @apply min-h-screen;
+    @apply flex flex-col;
+    @apply items-center;
+    @apply justify-evenly;
+}
+
+.start {
+    @apply transition-all;
+    @apply px-16;
+    @apply py-4;
+    @apply bg-red-500;
+    @apply text-8xl;
+    @apply font-bold;
+    @apply uppercase;
+
+    @apply cursor-pointer;
+    @apply hover:scale-200;
+
+    @apply active:scale-50;
+    @apply active:opacity-50;
+}
+
+.logo {
+    @apply max-w-2xs;
+}
