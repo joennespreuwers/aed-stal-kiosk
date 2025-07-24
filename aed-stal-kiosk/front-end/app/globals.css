@@ -48,7 +48,7 @@ body {
     @apply transition-all;
     @apply px-8;
     @apply py-2;
-    @apply bg-gray-800;
+    @apply bg-gray-600;
     @apply text-2xl;
     @apply font-bold;
     @apply uppercase;
@@ -72,4 +72,27 @@ body {
 
     @apply active:scale-50;
     @apply active:opacity-50;
+}
+
+form {
+    @apply flex flex-col;
+    @apply gap-8;
+}
+
+input {
+    @apply px-8;
+    @apply py-4;
+    @apply bg-gray-800;
+    @apply text-4xl;
+    @apply font-bold;
+    @apply uppercase;
+}
+
+button {
+    @apply px-8;
+    @apply py-4;
+    @apply bg-gray-600;
+    @apply text-4xl;
+    @apply font-bold;
+    @apply uppercase;
 }

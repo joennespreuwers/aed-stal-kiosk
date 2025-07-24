@@ -7,12 +7,24 @@ export default function Select() {
                 Back
             </Link>
             <ul className="device-list">
-                <li>Kut device 1</li>
-                <li>Kut device 2</li>
-                <li>Kut device 3</li>
-                <li>Kut device 4</li>
-                <li>Kut device 5</li>
-                <li>Kut device 6</li>
+                <li>
+                    <Link href="/edit-device/1">Kut device 1</Link>
+                </li>
+                <li>
+                    <Link href="/edit-device/2">Kut device 2</Link>
+                </li>
+                <li>
+                    <Link href="/edit-device/3">Kut device 3</Link>
+                </li>
+                <li>
+                    <Link href="/edit-device/4">Kut device 4</Link>
+                </li>
+                <li>
+                    <Link href="/edit-device/5">Kut device 5</Link>
+                </li>
+                <li>
+                    <Link href="/edit-device/6">Kut device 6</Link>
+                </li>
             </ul>
         </>
     )
