@@ -25,6 +25,10 @@ body {
     @apply justify-evenly;
 }
 
+.logo {
+    @apply max-w-2xs;
+}
+
 .start {
     @apply transition-all;
     @apply px-16;
@@ -35,12 +39,37 @@ body {
     @apply uppercase;
 
     @apply cursor-pointer;
-    @apply hover:scale-200;
 
     @apply active:scale-50;
     @apply active:opacity-50;
 }
 
-.logo {
-    @apply max-w-2xs;
+.back {
+    @apply transition-all;
+    @apply px-8;
+    @apply py-2;
+    @apply bg-gray-800;
+    @apply text-2xl;
+    @apply font-bold;
+    @apply uppercase;
+
+    @apply cursor-pointer;
+
+    @apply active:scale-50;
+    @apply active:opacity-50;
+}
+
+.device-list > * {
+    @apply transition-all;
+    @apply px-16;
+    @apply py-4;
+    @apply bg-gray-800;
+    @apply text-4xl;
+    @apply font-bold;
+    @apply uppercase;
+
+    @apply cursor-pointer;
+
+    @apply active:scale-50;
+    @apply active:opacity-50;
 }

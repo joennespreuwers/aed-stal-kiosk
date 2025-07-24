@@ -1,7 +1,9 @@
+import Link from "next/link"
+
 export default function Home() {
     return (
-        <a href="/select-device" className="start">
+        <Link href="/select-device" className="start">
             Start
-        </a>
+        </Link>
     )
 }
