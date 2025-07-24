@@ -59,10 +59,12 @@ body {
     @apply active:opacity-50;
 }
 
-.device-list > * {
+ul a {
+    @apply inline-block;
     @apply transition-all;
     @apply px-16;
     @apply py-4;
+    @apply w-full;
     @apply bg-gray-800;
     @apply text-4xl;
     @apply font-bold;

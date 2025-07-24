@@ -10,7 +10,7 @@ export default async function Select({
 
     return (
         <>
-            <Link href="/select-device" className="back">
+            <Link href={`/device/${id}`} className="back">
                 Back
             </Link>
             <Form action="">
