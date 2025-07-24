@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { Geist } from "next/font/google"
+
+import aedGroup from "@/public/aed-group.png"
 
 import "./globals.css"
 
@@ -21,7 +24,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${geistSans.variable} antialiased`}>
-                {children}
+                <section className="screen">
+                    {children}
+                    <Image src={aedGroup} alt="AED Group" className="logo" />
+                </section>
             </body>
         </html>
     )
