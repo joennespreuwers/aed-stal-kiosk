@@ -1,11 +1,9 @@
 from flask import Flask, jsonify, request
-import numpy as np
-import sounddevice as sd
 import threading
 from flask_cors import CORS
 from modules.sweep import sweep
 import sqlite3
-import uuid # Import the uuid module
+import uuid
 
 # ====================================
 # ============= SETUP ================
@@ -157,4 +155,4 @@ def play_sweep():
 
 
 if __name__ == '__main__':
-    backend.run(port=5001, debug=True)
+    backend.run(host='0.0.0.0', port=5001, debug=True)
