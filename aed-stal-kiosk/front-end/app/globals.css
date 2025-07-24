@@ -76,10 +76,16 @@ body {
 
 form {
     @apply flex flex-col;
-    @apply gap-8;
+}
+
+label {
+    @apply font-bold;
+    @apply text-xl;
+    @apply text-gray-500;
 }
 
 input {
+    @apply mb-4;
     @apply px-8;
     @apply py-4;
     @apply bg-gray-800;

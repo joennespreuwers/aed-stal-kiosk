@@ -14,13 +14,12 @@ export default async function Select({
                 Back
             </Link>
             <Form action="">
+                <label>ID</label>
                 <input name="id" value={id} disabled />
-                <input name="name" placeholder="Name" />
-                <input
-                    name="channel-count"
-                    type="number"
-                    placeholder="Channel Count"
-                />
+                <label>Name</label>
+                <input name="name" />
+                <label>Channel Count</label>
+                <input name="channel-count" type="number" />
                 <button type="submit">Edit</button>
             </Form>
         </>
