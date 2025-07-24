@@ -3,4 +3,3 @@ gunicorn
 sounddevice
 numpy
 Flask-CORS
-sqlite3

@@ -3,4 +3,6 @@
 # Activate virtual environment
 source venv/bin/activate
 
-python3 /aed-stal-kiosk/backend/backend.py
+cd ./aed-stal-kiosk/backend/
+
+python3 backend.py
