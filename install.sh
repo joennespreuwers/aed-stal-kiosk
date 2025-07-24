@@ -1,7 +1,13 @@
 #!/bin/bash
+set -e
 
-# Create virtual environment
-python3 -m venv venv
+# Go to script directory
+cd "$(dirname "$0")"
+
+# Create virtual environment if it doesn't exist
+if [ ! -d "venv" ]; then
+    python3 -m venv venv
+fi
 
 # Activate virtual environment
 source venv/bin/activate
@@ -10,10 +16,19 @@ source venv/bin/activate
 pip install --upgrade pip
 
 # Install requirements
-pip install -r requirements.txt
+if [ -f requirements.txt ]; then
+    pip install -r requirements.txt
+else
+    echo "requirements.txt not found!"
+    deactivate
+    exit 1
+fi
 
 deactivate
 
-chmod +x run_backend.sh
+# Make run_backend.sh executable if it exists
+if [ -f run_backend.sh ]; then
+    chmod +x run_backend.sh
+fi
 
 echo "Installation complete."

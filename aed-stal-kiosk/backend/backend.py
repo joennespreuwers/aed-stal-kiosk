@@ -138,6 +138,11 @@ def delete_amplifier(amplifier_id):
     except sqlite3.Error as e:
         return jsonify({"error": str(e)}), 500
 
+# ====================================
+# ============ TESTING ===============
+# ====================================
+
+# Code here for testing amp, prob will call function that does the gpio handeling, than other code that does the processing, then return this data on the display.
 
 # ====================================
 # ============== MAIN ================
@@ -153,6 +158,29 @@ def play_sweep():
 
     return jsonify({"message": "Sine sweep"}), 200
 
+
+@backend.route('/test', methods=['POST'])
+def test_amp():
+    data = request.get_json()
+    amplifier_id = data.get('id')
+    if not amplifier_id:
+        return jsonify({"error": "Missing amplifier id"}), 400
+
+    try:
+        with sqlite3.connect(DATABASE) as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT id, name, channel_count FROM amplifiers WHERE id = ?", (amplifier_id,))
+            amplifier = cursor.fetchone()
+            if amplifier:
+                for i in range(amplifier[2]):
+                    print(f"Channel {i}:")
+                    sweep(20, 20000, 0.5, 44100)
+
+                return jsonify({"message": f"Amplifier testing complete! (id={amplifier[0]}, channel count={amplifier[2]})"}), 200
+            else:
+                return jsonify({"error": "Amplifier not found"}), 404
+    except sqlite3.Error as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     backend.run(host='0.0.0.0', port=5001, debug=True)
